@@ -1,0 +1,25 @@
+{
+	"name": "app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile:sass": "node-sass sass/main.scss css/style.css -w",
+		"start:live-server": "live-server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/malejandro13/advanced-css-and-sass-natours-project.git"
+	},
+	"keywords": [],
+	"author": "malejandro13",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/malejandro13/advanced-css-and-sass-natours-project/issues"
+	},
+	"homepage": "https://github.com/malejandro13/advanced-css-and-sass-natours-project#readme",
+	"devDependencies": {
+		"live-server": "^1.2.1",
+		"node-sass": "^4.13.1"
+	}
+}
