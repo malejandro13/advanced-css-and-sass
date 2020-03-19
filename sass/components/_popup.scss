@@ -1,21 +1,28 @@
 .popup {
 	height: 100vh;
 	width: 100%;
-	background-color: rgba($color-black, .8);
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 3000;
+	background-color: rgba($color-black, .8);
+	z-index: 9999;
 	opacity: 0;
 	visibility: hidden;
 	transition: all .3s;
 
+	@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		background-color: rgba($color-black, .3);
+	}
+
 	&__content {
 		@include absCenter;
+
 		width: 75%;
 		background-color: $color-white;
-		border-radius: $default-border-radius;
 		box-shadow: 0 2rem 4rem rgba($color-black, .2);
+		border-radius: 3px;
 		display: table;
 		overflow: hidden;
 		opacity: 0;
@@ -29,7 +36,7 @@
 	}
 
 	&__right {
-		width: 66.666667%;
+		width: 66.6666667%;
 		display: table-cell;
 		vertical-align: middle;
 		padding: 3rem 5rem;
@@ -45,19 +52,11 @@
 		margin-bottom: 4rem;
 
 		-moz-column-count: 2;
-		-moz-column-gap: 4rem;
+		-moz-column-gap: 4rem; //1em = 14px;
 		-moz-column-rule: 1px solid $color-grey-light-2;
 
-		-ms-column-count: 2;
-		-ms-column-gap: 4rem;
-		-ms-column-rule: 1px solid $color-grey-light-2;
-
-		-webkit-column-count: 2;
-		-webkit-column-gap: 4rem;
-		-webkit-column-rule: 1px solid $color-grey-light-2;
-
 		column-count: 2;
-		column-gap: 4rem;
+		column-gap: 4rem; //1em = 14px;
 		column-rule: 1px solid $color-grey-light-2;
 
 		-moz-hyphens: auto;
@@ -66,6 +65,7 @@
 		hyphens: auto;
 	}
 
+	//Open states
 	&:target {
 		opacity: 1;
 		visibility: visible;
@@ -86,8 +86,8 @@
 			font-size: 3rem;
 			text-decoration: none;
 			display: inline-block;
-			line-height: 1;
 			transition: all .2s;
+			line-height: 1;
 		}
 
 		&:hover {
